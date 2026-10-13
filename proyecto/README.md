@@ -46,7 +46,7 @@ Con el CSV del curso salen 140 filas válidas y 10 inválidas.
 - Origen: https://www.kaggle.com/datasets/samartalwar/sleep-debt-and-screen-time-late-night-phone-habits
 - Autor: samartalwar (Kaggle)
 - Licencia: CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0/)
-- Fecha de descarga: PENDIENTE
+- Fecha de descarga: 11 de octubre de 2026
 - No he modificado el fichero. Tiene 8.500 filas y 18 columnas.
 
 ### Qué hace

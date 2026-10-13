@@ -1,0 +1,41 @@
+name: dsia-ci
+
+# Cuándo se ejecuta: en cada push a main o a una rama practica/*, y en cada pull request
+on:
+  push:
+    branches: [main, "practica/**"]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      # 1. Descargar el código del repo en la máquina de GitHub
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # 2. Instalar Python 3.12 (la misma versión que usamos en local)
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      # 3. Instalar las dependencias del curso
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      # 4. Tests del ejercicio E3 (flujo del curso)
+      - name: Tests E3 (curso)
+        working-directory: 2_pruebas_y_despliegue/ejercicios/E3_solucion
+        run: pytest -q
+
+      # 5. Tests del Proyecto I, con el mínimo de cobertura del 60 %
+      - name: Tests Proyecto I + cobertura (>= 60%)
+        working-directory: proyecto
+        run: |
+          pytest -q \
+            --cov=ventas_app \
+            --cov-report=term-missing \
+            --cov-fail-under=60

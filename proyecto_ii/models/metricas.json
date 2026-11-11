@@ -1,0 +1,54 @@
+{
+  "reparto": {
+    "train": 5950,
+    "validacion": 1275,
+    "test": 1275
+  },
+  "validacion": {
+    "sin_clima": {
+      "accuracy": 0.7231,
+      "f1_macro": 0.6418
+    },
+    "con_clima": {
+      "accuracy": 0.7145,
+      "f1_macro": 0.6154
+    }
+  },
+  "test_modelo_final": {
+    "accuracy": 0.6839,
+    "f1_macro": 0.5717
+  },
+  "acierto_diciendo_siempre_la_mas_comun": 0.5247,
+  "clases": [
+    "Mild Deficit",
+    "Moderate Debt",
+    "Optimal Recovery",
+    "Severe Sleep Debt"
+  ],
+  "matriz_confusion_test": [
+    [
+      147,
+      105,
+      49,
+      0
+    ],
+    [
+      69,
+      592,
+      5,
+      3
+    ],
+    [
+      86,
+      14,
+      108,
+      0
+    ],
+    [
+      0,
+      72,
+      0,
+      25
+    ]
+  ]
+}

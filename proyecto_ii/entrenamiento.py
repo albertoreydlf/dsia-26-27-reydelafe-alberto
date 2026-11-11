@@ -92,7 +92,12 @@ def evaluar(modelo, X, y):
     """Calcula accuracy y f1 macro del modelo sobre los datos que le pasemos."""
     predicciones = modelo.predict(X)
     return {
+        # accuracy: de todas las predicciones, que parte acierta (0.70 = acierta el 70%)
+        # ojo, puede enganar si una categoria es mucho mas comun que las demas
         "accuracy": round(accuracy_score(y, predicciones), 4),
+        # f1: junta precision (cuando dice una categoria, cuantas veces acierta)
+        # y recall (de los casos reales de esa categoria, cuantos encuentra)
+        # macro: se calcula el f1 de cada categoria y se hace la media, todas pesan igual
         "f1_macro": round(f1_score(y, predicciones, average="macro"), 4),
     }
 

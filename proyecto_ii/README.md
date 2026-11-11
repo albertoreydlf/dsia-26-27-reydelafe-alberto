@@ -7,7 +7,7 @@ Estructura:
 - `ingesta.py`: junta el CSV del sueño con el clima.
 - `entrenamiento.py`: entrena y guarda el modelo de scikit-learn.
 - `procesamiento.py`: carga el modelo y predice.
-- `cliente_hf.py`: cliente de Hugging Face (mock y real).
+- `cliente_ia.py`: cliente del modelo de lenguaje (mock y NVIDIA).
 - `pipeline.py`: ejecuta todo en orden.
 - `tests/`: pruebas con pytest.
 - `data/`: datos.
